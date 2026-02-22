@@ -3,34 +3,34 @@
   <h3>Categories</h3>
   <ul>
     {% for category in site.categories %}
-    <li>
-      <a href="/category/{{ category[0] }}/">
-        {{ category[0] }}
-      </a>
-    </li>
+      <li>
+        <a href="/category/{{ category[0] }}/">
+          {{ category[0] }}
+        </a>
+      </li>
     {% endfor %}
   </ul>
 
   <!-- 최근 작성한 글 30개 기준 상위 10개 태그 -->
   <h3>Popular Tags (Last 30 Posts)</h3>
-  <ul class="tag-list">
+  <ul>
     {% assign recent_posts = site.posts | slice: 0, 30 %}
     {% assign recent_tags = "" | split: "" %}
 
     {% for post in recent_posts %}
-    {% for tag in post.tags %}
-    {% assign recent_tags = recent_tags | push: tag %}
-    {% endfor %}
+      {% for tag in post.tags %}
+        {% assign recent_tags = recent_tags | push: tag %}
+      {% endfor %}
     {% endfor %}
 
     {% assign tag_counts = recent_tags | group_by: "itself" | sort: "size" | reverse %}
 
     {% for tag in tag_counts limit:10 %}
-    <li>
-      <a class="tag" href="{{ '/tag/' | append: tag.name | prepend: site.baseurl }}">
-        #{{ tag.name }}
-      </a>
-      <span class="count">({{ tag.items.size }})</span>
-    </li>
+      <li>
+        <a href="/tag/{{ tag.name | downcase }}/">
+          #{{ tag.name }}
+        </a>
+      </li>
     {% endfor %}
   </ul>
+</div>
