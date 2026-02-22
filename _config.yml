@@ -2,7 +2,7 @@ title:              Clean Blog
 email:              your-email@example.com
 description:        A Blog Theme by Start Bootstrap
 author:             DalYeoU
-baseurl:            "/startbootstrap-clean-blog-jekyll"
+baseurl:            "" # the subpath of your site, e.g. /blog
 url:                "https://DalYeoU.github.io"
 
 # Social Profiles
