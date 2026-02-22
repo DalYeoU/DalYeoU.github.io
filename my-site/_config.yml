@@ -30,9 +30,12 @@ twitter_username:
 github_username:  DalYeoU
 
 # Build settings
-# theme: jekyll-theme-clean-blog
+remote_theme: jekyll-theme-clean-blog
 plugins:
+  - jekyll-remote-theme
   - jekyll-feed
+  - jekyll-paginate
+  - jekyll-sitemap
 
 # Exclude from processing.
 # The following items will not be processed, by default.

@@ -5,7 +5,7 @@ author:             DalYeoU
 baseurl:            "" # the subpath of your site, e.g. /blog
 url:                "https://DalYeoU.github.io"
 
-remote_theme: StartBootstrap/jekyll-theme-clean-blog
+remote_theme: jekyll-theme-clean-blog
 
 # Social Profiles
 twitter_username:   
