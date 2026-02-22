@@ -31,3 +31,10 @@
 .sidebar li {
   margin-bottom: 8px;
 }
+.category-title {
+  text-align: center;
+  font-size: 2.2rem;   /* 크게 표시 */
+  font-weight: 700;
+  margin: 2rem 0 1.5rem 0;
+  color: #222;
+}
