@@ -8,6 +8,10 @@
   margin-right: 5px;
 }
 
+.main-content {
+  margin-left: 260px; /* 사이드바 폭(220px) + 여백 */
+  max-width: 900px;
+}
 
 .container {
   display: flex;
@@ -16,6 +20,7 @@
 .sidebar {
   flex: 0 0 220px; /* 사이드바 고정 폭 */
   margin-right: 20px;
+  position: relative; /* fixed 제거 */
 }
 
 .main-content {
