@@ -25,10 +25,16 @@ layout: default
 
   <div class="container">
     <div class="row">
-      <div class="col-lg-8 col-md-10 mx-auto">
+      <!-- 좌측 카테고리 목록 -->
+      <div class="col-md-3">
+        <div class="sidebar">
+          {% include sidebar.html %}
+        </div>
+      </div>
 
+      <!-- 우측 포스트 목록 -->
+      <div class="col-md-9">
         {{ content }}
-
       </div>
     </div>
   </div>
