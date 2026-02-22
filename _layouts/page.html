@@ -4,7 +4,8 @@ layout: default
 
 <!-- Page Header -->
 {% if page.background %}
-<header class="masthead" style="background-image: url('{{ page.background | prepend: site.baseurl | replace: '//', '/' }}')">
+<header class="masthead"
+  style="background-image: url('{{ page.background | prepend: site.baseurl | replace: '//', '/' }}')">
   {% else %}
   <header class="masthead">
     {% endif %}
@@ -24,17 +25,11 @@ layout: default
   </header>
 
   <div class="container">
-    <div class="row">
-      <!-- 좌측 카테고리 목록 -->
-      <div class="col-md-3">
-        <div class="sidebar">
-          {% include sidebar.html %}
-        </div>
-      </div>
+    <div class="sidebar">
+      {% include sidebar.html %}
+    </div>
 
-      <!-- 우측 포스트 목록 -->
-      <div class="col-md-9">
-        {{ content }}
-      </div>
+    <div class="main-content">
+      {{ content }}
     </div>
   </div>

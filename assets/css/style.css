@@ -7,27 +7,17 @@
   padding: 2px 8px;
   margin-right: 5px;
 }
+
+
+.container {
+  display: flex;
+}
+
 .sidebar {
-  position: fixed;       /* 화면에 고정 */
-  top: 100px;            /* 네비게이션 아래쪽 여백 */
-  left: 20px;            /* 좌측 여백 */
-  width: 220px;          /* 사이드바 너비 */
-  background: #f9f9f9;
-  padding: 15px;
-  border-radius: 8px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  flex: 0 0 220px; /* 사이드바 고정 폭 */
+  margin-right: 20px;
 }
 
-.sidebar h3 {
-  margin-top: 0;
-  font-size: 1.2em;
-}
-
-.sidebar ul {
-  list-style: none;
-  padding-left: 0;
-}
-
-.sidebar li {
-  margin-bottom: 8px;
+.main-content {
+  flex: 1; /* 남은 공간을 본문이 차지 */
 }
