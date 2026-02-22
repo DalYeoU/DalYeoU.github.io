@@ -5,6 +5,8 @@ author:             DalYeoU
 baseurl:            "" # the subpath of your site, e.g. /blog
 url:                "https://DalYeoU.github.io"
 
+remote_theme: StartBootstrap/jekyll-theme-clean-blog
+
 # Social Profiles
 twitter_username:   
 github_username:    # DalYeoU
@@ -20,6 +22,7 @@ markdown:           kramdown
 paginate:           5
 paginate_path:      "/posts/page:num/"
 plugins:
+  - jekyll-remote-theme
   - jekyll-feed
   - jekyll-paginate
   - jekyll-sitemap ## Uncomment this line to silently generate a sitemaps.org compliant sitemap for your Jekyll site
