@@ -91,4 +91,8 @@ html, body {
 }.table td {
   text-align: center;
   vertical-align: middle;
+}.table-row {
+  display: flex;
+  gap: 40px;
+  align-items: flex-start;
 }
