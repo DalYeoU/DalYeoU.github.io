@@ -12,7 +12,7 @@
   </ul>
 
   <!-- 최근 작성한 글 30개 기준 상위 10개 태그 -->
-  <h3>Popular Tags (Last 30 Posts)</h3>
+  <h3>Popular Tags</h3>
   <ul class="tag-list">
     {% assign recent_posts = site.posts | slice: 0, 30 %}
     {% assign recent_tags = "" | split: "" %}
