@@ -89,16 +89,18 @@
     if (!sidebar || !wrapper) return;
 
     const offsetTop = 80;
-    const wrapperTop = wrapper.offsetTop;
+    const wrapperTop = wrapper.getBoundingClientRect().top + window.scrollY;
 
     if (window.scrollY > wrapperTop - offsetTop) {
       sidebar.style.position = 'fixed';
       sidebar.style.top = offsetTop + 'px';
-      sidebar.style.width = '220px';
+      sidebar.style.width = sidebar.offsetWidth + 'px';
+      // 본문 침입 방지: 사이드바 자리만큼 main-content에 margin 추가
+      document.querySelector('.main-content').style.marginLeft = (sidebar.offsetWidth + 20) + 'px';
     } else {
       sidebar.style.position = 'relative';
       sidebar.style.top = '0';
-      sidebar.style.width = '220px';
+      document.querySelector('.main-content').style.marginLeft = '0';
     }
   });
 </script>
