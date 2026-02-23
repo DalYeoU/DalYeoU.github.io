@@ -27,9 +27,11 @@ layout: default
     <div class="row">
       <!-- 좌측 카테고리 목록 -->
       <div class="col-md-3">
-        {% include sidebar.html %}
+        <div class="sidebar">
+          {% include sidebar.html %}
+        </div>
       </div>
-    
+
       <!-- 우측 포스트 목록 -->
       <div class="col-md-9">
         {{ content }}
