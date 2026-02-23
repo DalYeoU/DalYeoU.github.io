@@ -19,14 +19,12 @@
     0 0 12px rgba(0,0,0,0.12),
     0 4px 8px rgba(0,0,0,0.08);
 }
-
 .sidebar ul {
   background: transparent;
   margin: 0;
   padding: 0;
   list-style: none;
 }
-
 .sidebar li {
   background: transparent;
   border: none;
@@ -35,11 +33,9 @@
   padding: 4px 0;
   border-bottom: 1px solid #eee;
 }
-
 .sidebar li:last-child {
   border-bottom: none;
 }
-
 .sidebar-badge {
   float: right;
   background: #0085A1;
@@ -48,6 +44,34 @@
   padding: 1px 8px;
   font-size: 0.75rem;
   font-weight: 600;
+}
+
+.category-posts {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto;
+  max-width: 750px;        /* 가로 최대 너비 제한 */
+}
+.category-posts li {
+  padding: 16px 0;
+  border-bottom: 1px solid #eee;
+}
+.category-posts li:last-child {
+  border-bottom: none;
+}
+.category-posts a {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #333;
+  text-decoration: none;
+}
+.category-posts a:hover {
+  color: #0085A1;
+}
+.post-meta {
+  font-size: 0.85rem;
+  color: #aaa;
+  margin-top: 4px;
 }
 
 .main-content {

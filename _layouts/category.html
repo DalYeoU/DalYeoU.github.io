@@ -27,11 +27,16 @@ layout: default
     </div>
   </header>
 
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-8 col-md-10 mx-auto">
+<div class="container-fluid px-4">
+    <div class="content-wrapper">
 
-        <!-- 글 목록 -->
+      <!-- 사이드바 -->
+      <aside class="sidebar">
+        {% include sidebar.html %}
+      </aside>
+
+      <!-- 글 목록 -->
+      <main class="main-content">
         <ul class="category-posts">
           {% for post in site.categories[page.category] %}
           <li>
@@ -51,7 +56,7 @@ layout: default
           </li>
           {% endfor %}
         </ul>
+      </main>
 
-      </div>
     </div>
   </div>
