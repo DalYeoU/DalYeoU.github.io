@@ -8,13 +8,13 @@
   margin-right: 5px;
 }
 
-.container {
+.content-wrapper {
   display: flex;
-  gap: 20px; /* 사이드바와 본문 사이 간격 */
+  gap: 20px;
 }
 
 .sidebar {
-  flex: 0 0 220px; /* 사이드바 고정 폭 */
+  flex: 0 0 220px;
   background: #f9f9f9;
   padding: 15px;
   border-radius: 8px;
@@ -22,5 +22,5 @@
 }
 
 .main-content {
-  flex: 1; /* 남은 공간을 본문이 차지 */
+  flex: 1;
 }
