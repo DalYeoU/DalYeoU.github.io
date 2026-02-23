@@ -16,11 +16,7 @@ background: '/img/bg-post.jpg'
     {% endif %}
   </a>
   <p class="post-meta">Posted by
-    {% if post.author %}
-    {{ post.author }}
-    {% else %}
-    {{ site.author }}
-    {% endif %}
+    {% if post.author %}  {{ post.author }} {% else %}  {{ site.author }}  {% endif %}
     on {{ post.date | date: '%B %-d, %Y, %-I:%M %p' }} &middot; {% include read_time.html content=post.content %}
   </p>
 </article>
