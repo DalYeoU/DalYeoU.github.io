@@ -29,6 +29,6 @@
 .main-content {
   flex: 1;          /* 남은 공간을 본문이 차지 */
   min-width: 0;     /* 긴 텍스트 줄바꿈 처리 */
-  background: #fff; /* 본문 배경 (선택) */
-  padding: 15px;
+  /* background: #fff; 본문 배경 (선택) */
+  /* padding: 15px; */
 }
