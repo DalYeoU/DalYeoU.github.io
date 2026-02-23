@@ -87,4 +87,5 @@ html, body {
 .main-content {
   flex: 1;                  /* 남은 공간 전부 차지 */
   min-width: 0;             /* 긴 텍스트 넘침 방지 */
+  min-height: 1500px;   /* 임시 테스트용 */
 }
