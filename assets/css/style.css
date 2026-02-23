@@ -1,29 +1,20 @@
-.post-tags .tag {
-  display: inline-block;
-  font-size: 0.8em;
-  color: #666;
-  background: #f0f0f0;
-  border-radius: 12px;
-  padding: 2px 8px;
-  margin-right: 5px;
-}
-
 .content-wrapper {
   display: flex;
   gap: 20px;
-  align-items: flex-start; /* 위쪽 기준으로 맞춤 */
+  align-items: flex-start;
 }
 
 .sidebar {
-  flex: 0 0 250px;         /* 너비 고정 */
-  min-width: 200px;
-  max-width: 300px;
-  position: sticky;        /* ← 스크롤 고정 핵심 */
-  top: 80px;               /* 네비바 높이만큼 여백 */
-  align-self: flex-start;  /* ← 이게 없으면 sticky 안 먹힘 */
+  flex: 0 0 220px;          /* 가로 고정, 세로 자동 */
+  width: 220px;
+  position: sticky;
+  top: 80px;
+  align-self: flex-start;   /* sticky 필수 */
   background: transparent;
   padding: 15px;
   border-radius: 12px;
+  margin-left: 0;
+  margin-right: auto;
   box-shadow: 
     0 0 12px rgba(0,0,0,0.12),
     0 4px 8px rgba(0,0,0,0.08);
@@ -35,15 +26,31 @@
   padding: 0;
   list-style: none;
 }
+
 .sidebar li {
   background: transparent;
   border: none;
   box-shadow: none;
   margin: 4px 0;
   padding: 4px 0;
-  border-bottom: 1px solid #eee; /* 얇은 구분선 */
+  border-bottom: 1px solid #eee;
 }
 
 .sidebar li:last-child {
   border-bottom: none;
+}
+
+.sidebar-badge {
+  float: right;
+  background: #0085A1;
+  color: #fff;
+  border-radius: 10px;
+  padding: 1px 8px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.main-content {
+  flex: 1;                  /* 남은 공간 전부 차지 */
+  min-width: 0;             /* 긴 텍스트 넘침 방지 */
 }
