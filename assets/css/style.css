@@ -93,6 +93,12 @@ html, body {
   vertical-align: middle;
 }.table-row {
   display: flex;
+  flex-direction: row;    /* 가로 방향으로 */
   gap: 40px;
   align-items: flex-start;
+}
+
+.table-row .table {
+  width: auto;            /* 표 너비를 내용에 맞게 */
+  flex-shrink: 0;         /* 표가 줄어들지 않게 */
 }
