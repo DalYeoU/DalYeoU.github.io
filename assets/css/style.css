@@ -15,11 +15,11 @@ html, body {
 }
 
 .sidebar {
-  flex: 0 0 220px;          /* 가로 고정, 세로 자동 */
+  flex: 0 0 220px;
   width: 220px;
-  position: sticky;
-  top: 80px;
-  align-self: flex-start;   /* sticky 필수 */
+  position: sticky !important;
+  top: 80px !important;
+  align-self: flex-start !important;
   background: transparent;
   padding: 15px;
   border-radius: 12px;
