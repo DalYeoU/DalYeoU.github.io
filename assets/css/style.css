@@ -10,7 +10,7 @@
 
 .content-wrapper {
   display: flex;
-  gap: 20px; /* 사이드바와 본문 사이 간격 */
+  gap: 20px;
   align-items: flex-start; /* 위쪽 기준으로 맞춤 */
 }
 
@@ -25,4 +25,6 @@
 .main-content {
   flex: 1; /* 남은 공간을 본문이 차지 */
   min-width: 0; /* 긴 텍스트 줄바꿈 처리 */
+  background: #fff; /* 본문 배경 (선택) */
+  padding: 15px;
 }
