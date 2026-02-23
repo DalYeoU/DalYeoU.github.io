@@ -1,10 +1,6 @@
-html {
-  overflow-y: auto !important;
-}
-
-body {
-  overflow-y: auto !important;
-  height: auto !important;
+/* sticky 작동을 막는 overflow 해제 */
+html, body {
+  overflow-x: hidden;
 }
 
 .container-fluid {
@@ -19,11 +15,11 @@ body {
 }
 
 .sidebar {
-  flex: 0 0 220px;
+  flex: 0 0 220px;          /* 가로 고정, 세로 자동 */
   width: 220px;
-  position: sticky !important;
-  top: 80px !important;
-  align-self: flex-start !important;
+  position: sticky;
+  top: 80px;
+  align-self: flex-start;   /* sticky 필수 */
   background: transparent;
   padding: 15px;
   border-radius: 12px;
