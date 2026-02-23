@@ -81,7 +81,7 @@ html, body {
 
 .table {
   width: auto;            /* 표 너비 내용에 맞게 */
-  margin: 20px auto;      /* 중앙 정렬 */
+  margin: 20px 0;      /* 중앙 정렬 */
   font-size: 0.9rem;
 }.table th {
   background-color: #f8f8f8;
