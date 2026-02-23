@@ -18,10 +18,10 @@
   flex: 0 1 auto;
   min-width: 250px;
   max-width: 350px;
-  background: transparent; /* 배경 제거 */
+  background: #f9f9f9;
   padding: 15px;
-  border-radius: 12px;
-  box-shadow: 0 0 12px rgba(0,0,0,0.15);
+  border-radius: 12px; /* 둥근 모서리 강조 */
+  box-shadow: 0 0 12px rgba(0,0,0,0.15); /* 사방으로 퍼지는 그림자 */
 }
 
 .main-content {
