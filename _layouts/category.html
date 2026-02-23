@@ -44,7 +44,7 @@ layout: default
           </a>
           <p class="post-meta">Posted by
             {% if post.author %}{{ post.author }}{% else %}{{ site.author }}{% endif %}
-            on {{ post.date | date: '%B %d, %Y' }}
+            on {{ post.date | date: '%B %-d, %Y, %-I:%M %p' }}
             &middot; {% include read_time.html content=post.content %}
             {% if post.tags %}
             {% for tag in post.tags %}
