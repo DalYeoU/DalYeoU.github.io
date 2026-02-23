@@ -2,9 +2,9 @@
   display: inline-block;
   font-size: 0.8em;
   color: #666;
-  background: #f0f0f0;
-  border-radius: 12px;
-  padding: 2px 8px;
+  background: transparent; /* 배경 제거 */
+  border-radius: 0;        /* 둥근 모서리 제거 */
+  padding: 2px 6px;
   margin-right: 5px;
 }
 
@@ -13,7 +13,6 @@
   gap: 20px;
   align-items: flex-start; /* 위쪽 기준으로 맞춤 */
 }
-
 .sidebar {
   flex: 0 1 auto;
   min-width: 250px;
@@ -25,10 +24,22 @@
     0 0 12px rgba(0,0,0,0.12),   /* 사방 퍼짐 */
     0 4px 8px rgba(0,0,0,0.08);  /* 아래쪽 살짝 강조 */
 }
+.sidebar ul {
+  background: transparent; /* 리스트 배경 제거 */
+  margin: 0;
+  padding: 0;
+  list-style: none; /* 기본 점 제거 */
+}
+.sidebar li {
+  background: transparent; /* 각 항목 배경 제거 */
+  border: none;
+  box-shadow: none;
+  margin: 4px 0;
+}
 
 .main-content {
   flex: 1;          /* 남은 공간을 본문이 차지 */
   min-width: 0;     /* 긴 텍스트 줄바꿈 처리 */
-  /* background: #fff; 본문 배경 (선택) */
-  /* padding: 15px; */
+  background: #fff; /* 본문 배경 (선택) */
+  padding: 15px;
 }
