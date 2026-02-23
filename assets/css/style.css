@@ -15,13 +15,13 @@
 }
 
 .sidebar {
-  flex: 0 1 auto;   /* 내용에 맞게 폭이 늘어남 */
-  min-width: 250px; /* 최소 폭 */
-  max-width: 350px; /* 최대 폭 */
+  flex: 0 1 auto;
+  min-width: 250px;
+  max-width: 350px;
   background: #f9f9f9;
   padding: 15px;
-  border-radius: 8px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  border-radius: 12px; /* 둥근 모서리 강조 */
+  box-shadow: 0 0 12px rgba(0,0,0,0.15); /* 사방으로 퍼지는 그림자 */
 }
 
 .main-content {
