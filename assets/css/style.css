@@ -1,8 +1,17 @@
+/* sticky 작동을 막는 overflow 해제 */
+html, body {
+  overflow-x: hidden;
+}
+
+.container-fluid {
+  overflow: visible !important;
+}
 .content-wrapper {
   display: flex;
   gap: 20px;
   align-items: flex-start;
   margin-bottom: 40px;  /* ← 이거 추가 */
+  overflow: visible;       /* ← 추가 */
 }
 
 .sidebar {
