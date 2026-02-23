@@ -24,12 +24,18 @@ layout: default
     </div>
   </header>
 
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-8 col-md-10 mx-auto">
+  <div class="container-fluid px-4">
+    <div class="content-wrapper">
 
+      <!-- 사이드바 -->
+      <aside class="sidebar">
+        {% include sidebar.html %}
+      </aside>
+
+      <!-- 본문 -->
+      <main class="main-content">
         {{ content }}
+      </main>
 
-      </div>
     </div>
   </div>
