@@ -15,9 +15,9 @@
 }
 
 .sidebar {
-  flex: 0 0 220px; /* 사이드바 고정 폭 */
+  flex: 0 0 80px; /* 사이드바 고정 폭 */
   background: #f9f9f9;
-  padding: 15px;
+  padding: 0px;
   border-radius: 8px;
   box-shadow: 0 2px 6px rgba(0,0,0,0.1);
 }
