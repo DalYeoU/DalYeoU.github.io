@@ -1,6 +1,6 @@
 ---
 layout: category
 title: TIL
-category: TIL
+# category: TIL
 permalink: /category/TIL/
 ---
