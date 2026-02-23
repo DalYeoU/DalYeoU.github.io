@@ -15,7 +15,9 @@
 }
 
 .sidebar {
-  flex: 0 0 220px; /* 사이드바 고정 폭 */
+  flex: 0 1 auto;   /* 내용에 맞게 폭이 늘어남 */
+  min-width: 250px; /* 최소 폭 */
+  max-width: 350px; /* 최대 폭 */
   background: #f9f9f9;
   padding: 15px;
   border-radius: 8px;
@@ -23,8 +25,8 @@
 }
 
 .main-content {
-  flex: 1; /* 남은 공간을 본문이 차지 */
-  min-width: 0; /* 긴 텍스트 줄바꿈 처리 */
+  flex: 1;          /* 남은 공간을 본문이 차지 */
+  min-width: 0;     /* 긴 텍스트 줄바꿈 처리 */
   background: #fff; /* 본문 배경 (선택) */
   padding: 15px;
 }
