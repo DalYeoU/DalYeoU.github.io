@@ -1,4 +1,6 @@
 <span class="reading-time" title="Estimated read time">
-  {% assign words = include.content | number_of_words %}
-  {% assign chars = words | times: 2.5 %}
-  {% if chars < 400 %} 1 min {% else %} {{ chars | divided_by:400 | ceil }} mins {% endif %} read </span>
+  {% assign words = include.content | number_of_words %}    <!-- * 글의 본문을 가져와서 단어수를 계산함 -->
+  {% assign chars = words | times: 2.5 %}                   <!-- * 단어에 2.5 곱하기  -->
+  {% if chars < 400 %} 1 min                                <!-- * 400자 미만이면 1분으로 표시 -->
+  {% else %} {{ chars | divided_by:400 | ceil }} mins       <!-- * 400자 이상이면 400자로 나누고 올림하여 분으로 표시 -->
+  {% endif %} read </span>

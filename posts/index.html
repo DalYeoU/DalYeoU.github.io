@@ -4,7 +4,7 @@ title: Posts
 background: '/img/bg-post.jpg'
 permalink: /posts/
 ---
-
+<!-- Main Content -->
 {% for post in paginator.posts %}
 
 <article class="post-preview">
@@ -20,9 +20,9 @@ permalink: /posts/
     {% if post.author %}{{ post.author }}{% else %}{{ site.author }}{% endif %}
     on {{ post.date | date: '%B %-d, %Y, %-I:%M %p' }} &middot; {% include read_time.html content=post.content %}
     {% if post.tags %}
-      {% for tag in post.tags %}
-        <a class="tag" href="javascript:void(0)">#{{ tag }}</a>
-      {% endfor %}
+    {% for tag in post.tags %}
+    <a class="tag" href="javascript:void(0)">#{{ tag }}</a>
+    {% endfor %}
     {% endif %}
   </p>
 </article>
@@ -37,12 +37,17 @@ permalink: /posts/
 <div class="clearfix">
 
   {% if paginator.previous_page %}
-  <a class="btn btn-primary float-left" href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&larr;
-    Newer<span class="d-none d-md-inline"> Posts</span></a>
+  <a class="btn btn-primary float-left"
+    href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&larr;Newer
+    <span class="d-none d-md-inline"> Posts</span>
+  </a>
   {% endif %}
 
   {% if paginator.next_page %}
-  <a class="btn btn-primary float-right" href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">Older<span class="d-none d-md-inline"> Posts</span> &rarr;</a>
+  <a class="btn btn-primary float-right"
+    href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">Older
+    <span class="d-none d-md-inline"> Posts</span> &rarr;
+  </a>
   {% endif %}
 
 </div>

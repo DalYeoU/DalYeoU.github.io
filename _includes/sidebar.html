@@ -2,12 +2,12 @@
 <ul>
   {% assign categories = site.posts | map: "categories" | join: "," | split: "," | uniq | sort %}
   {% for category in categories %}
-    {% assign count = site.posts | where_exp: "post", "post.categories contains category" | size %}
-    <li>
-      <a href="/category/{{ category }}/">
-        {{ category }}
-        <span class="sidebar-badge">{{ count }}</span>
-      </a>
-    </li>
+  {% assign count = site.posts | where_exp: "post", "post.categories contains category" | size %}
+  <li>
+    <a href="/category/{{ category }}/">
+      {{ category }}
+      <span class="sidebar-badge">{{ count }}</span>
+    </a>
+  </li>
   {% endfor %}
 </ul>

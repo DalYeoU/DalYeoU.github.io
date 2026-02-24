@@ -1,47 +1,61 @@
-/* sticky 작동을 막는 overflow 해제 */
-html, body {
+/*
+? dasd
+! asds
+& asds
+^ asds
+* asds
+~ asds
+TODO: asds
+*/
+
+html,
+body {
   overflow-x: hidden;
 }
 
 .container-fluid {
   overflow: visible !important;
-}.content-wrapper {
+}
+.content-wrapper {
   display: flex;
   gap: 20px;
   align-items: flex-start;
-  margin-bottom: 40px;  /* ← 이거 추가 */
-  overflow: visible;       /* ← 추가 */
+  margin-bottom: 40px;
+  overflow: visible;
 }
 
 .sidebar {
-  flex: 0 0 220px;          /* 가로 고정, 세로 자동 */
+  flex: 0 0 220px;      /* * 가로 고정, 세로 자동 */
   width: 220px;
   position: sticky;
   top: 80px;
-  align-self: flex-start;   /* sticky 필수 */
+  align-self: flex-start;
   background: transparent;
   padding: 15px;
   border-radius: 12px;
   margin-left: 0;
   margin-right: auto;
-  box-shadow: 
-    0 0 12px rgba(0,0,0,0.12),
-    0 4px 8px rgba(0,0,0,0.08);
-}.sidebar ul {
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.12),
+            0 4px 8px rgba(0, 0, 0, 0.08);
+}
+.sidebar ul {
   background: transparent;
   margin: 0;
   padding: 0;
   list-style: none;
-}.sidebar li {
+}
+.sidebar li {
   background: transparent;
   border: none;
   box-shadow: none;
   margin: 4px 0;
   padding: 4px 0;
   border-bottom: 1px solid #eee;
-}.sidebar li:last-child {
+}
+.sidebar li:last-child {
   border-bottom: none;
-}.sidebar-badge {
+}
+.sidebar-badge {
   float: right;
   background: #0085A1;
   color: #fff;
@@ -55,40 +69,48 @@ html, body {
   list-style: none;
   padding: 0;
   margin: 0 auto;
-  max-width: 750px;        /* 가로 최대 너비 제한 */
-}.category-posts li {
+  max-width: 750px;     /* * 가로 최대 너비 제한 */
+}
+.category-posts li {
   padding: 16px 0;
   border-bottom: 1px solid #eee;
-}.category-posts li:last-child {
+}
+.category-posts li:last-child {
   border-bottom: none;
-}.category-posts a {
+}
+.category-posts a {
   font-size: 1.1rem;
   font-weight: 600;
   color: #333;
   text-decoration: none;
-}.category-posts a:hover {
+}
+.category-posts a:hover {
   color: #0085A1;
-}.post-meta {
+}
+
+.post-meta {
   font-size: 0.85rem;
   color: #aaa;
   margin-top: 4px;
 }
 
 .main-content {
-  flex: 1;                  /* 남은 공간 전부 차지 */
-  min-width: 0;             /* 긴 텍스트 넘침 방지 */
+  flex: 1;          /* * 남은 공간 전부 차지 */
+  min-width: 0;     /* * 긴 텍스트 넘침 방지 */
 }
 
 .table {
-  width: auto;            /* 표 너비 내용에 맞게 */
-  margin: 20px 0;      /* 중앙 정렬 */
+  width: auto;      /* * 표 너비 내용에 맞게 */
+  margin: 20px 0;   /* * 중앙 정렬 */
   font-size: 0.9rem;
-}.table th {
+}
+.table th {
   background-color: #f8f8f8;
   font-weight: 600;
   text-align: center;
   vertical-align: middle;
-}.table td {
+}
+.table td {
   text-align: center;
   vertical-align: middle;
 }

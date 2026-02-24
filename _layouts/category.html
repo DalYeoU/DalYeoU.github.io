@@ -9,12 +9,12 @@ layout: default
   {% else %}
   <header class="masthead">
     {% endif %}
-    <div class="overlay"></div>
+    <div class="overlay">   </div>
     <div class="container">
       <div class="row">
         <div class="col-lg-8 col-md-10 mx-auto">
           <div class="site-heading"> <!-- post-heading → site-heading -->
-            <h1>{{ page.title }}</h1>
+            <h1>  {{ page.title }}  </h1>
           </div>
         </div>
       </div>
@@ -24,38 +24,39 @@ layout: default
   <div class="container-fluid px-4">
     <div class="content-wrapper">
 
-      <!-- 사이드바 -->
+      <!-- *사이드바 -->
       <aside class="sidebar">
         {% include sidebar.html %}
       </aside>
 
-      <!-- 글 목록 -->
+      <!-- *글 목록 -->
       <main class="main-content">
         {% for post in site.categories[page.category] %}
-
         <article class="post-preview">
           <a href="{{ post.url | prepend: site.baseurl | replace: '//', '/' }}">
-            <h2 class="post-title">{{ post.title }}</h2>
+            <h2 class="post-title">     {{ post.title }}  </h2>
             {% if post.subtitle %}
-            <h3 class="post-subtitle">{{ post.subtitle }}</h3>
+            <h3 class="post-subtitle">  {{ post.subtitle }}  </h3>
             {% else %}
-            <h3 class="post-subtitle">{{ post.excerpt | strip_html | truncatewords: 15 }}</h3>
+            <h3 class="post-subtitle">  {{ post.excerpt | strip_html | truncatewords: 15 }}   </h3>
             {% endif %}
           </a>
           <p class="post-meta">Posted by
-            {% if post.author %}{{ post.author }}{% else %}{{ site.author }}{% endif %}
+            {% if post.author %}  {{ post.author }}
+            {% else %}  {{ site.author }}
+            {% endif %}
             on {{ post.date | date: '%B %-d, %Y, %-I:%M %p' }}
-            &middot; {% include read_time.html content=post.content %}
-            {% if post.tags %}  {% for tag in post.tags %}
-            <a class="tag" href="javascript:void(0)">#{{ tag }}</a>
-            {% endfor %}  {% endif %}
+            &middot;
+            {% include read_time.html content=post.content %}
+            {% if post.tags %}
+            {% for tag in post.tags %}
+            <a class="tag" href="javascript:void(0)">   #{{ tag }}  </a>
+            {% endfor %}
+            {% endif %}
           </p>
         </article>
-
         <hr>
-
         {% endfor %}
       </main>
-
     </div>
   </div>
