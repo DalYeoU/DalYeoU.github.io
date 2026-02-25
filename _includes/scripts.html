@@ -4,6 +4,17 @@
 
 <script src="{{"/assets/scripts.js" | relative_url }}"></script>
 
+<!-- Medium Zoom 라이브러리 추가 -->
+<script src="https://cdn.jsdelivr.net/npm/medium-zoom/dist/medium-zoom.min.js"></script>
+<script>
+  // .img-fluid 클래스가 있거나 figure 태그 안의 이미지에 확대 기능 적용
+  mediumZoom('.img-fluid, figure img', {
+    margin: 24,
+    background: '#212529', // 확대 시 배경색 (어두운 회색)
+    scrollOffset: 0,
+  });
+</script>
+
 <script>
   window.addEventListener('scroll', function() {
     const sidebar = document.querySelector('.sidebar');
