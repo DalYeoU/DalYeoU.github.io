@@ -4,14 +4,28 @@
 
 <script src="{{"/assets/scripts.js" | relative_url }}"></script>
 
-<!-- Medium Zoom 라이브러리 추가 -->
-<script src="https://cdn.jsdelivr.net/npm/medium-zoom/dist/medium-zoom.min.js"></script>
+<!-- LightGallery 라이브러리 추가 (보여주신 사진과 같은 갤러리 스타일) -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/css/lightgallery.min.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/css/lg-thumbnail.min.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/css/lg-zoom.min.css" />
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/lightgallery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/plugins/thumbnail/lg-thumbnail.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/plugins/zoom/lg-zoom.min.js"></script>
+
 <script>
-  // .img-fluid 클래스가 있거나 figure 태그 안의 이미지에 확대 기능 적용
-  mediumZoom('.img-fluid, figure img', {
-    margin: 24,
-    background: '#212529', // 확대 시 배경색 (어두운 회색)
-    scrollOffset: 0,
+  document.addEventListener('DOMContentLoaded', function() {
+    // 블로그 본문(.main-content) 내의 이미지들을 갤러리로 연결
+    const container = document.querySelector('.main-content');
+    if (container) {
+      lightGallery(container, {
+        selector: '.img-fluid, figure img', // 갤러리에 포함시킬 이미지 선택자
+        plugins: [lgZoom, lgThumbnail],     // 줌, 썸네일 플러그인 활성화
+        speed: 500,
+        thumbnail: true,                    // 우측(또는 하단) 썸네일 보이기
+        zoom: true                          // 확대 기능 활성화
+      });
+    }
   });
 </script>
 
