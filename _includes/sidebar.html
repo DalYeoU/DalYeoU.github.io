@@ -4,7 +4,7 @@
   {% for category in categories %}
   {% assign count = site.posts | where_exp: "post", "post.categories contains category" | size %}
   <li>
-    <a href="/category/{{ category }}/">
+    <a href="{{ '/category/' | append: category | append: '/' | relative_url }}">
       {{ category }}
       <span class="sidebar-badge">{{ count }}</span>
     </a>
