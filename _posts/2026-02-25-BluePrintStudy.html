@@ -35,9 +35,9 @@ author: "달여우"
 
 <h3>레벨 블루프린트 실습</h3>
 
-<figure style="text-align: center; margin: 20px 0;">
-    <img src="{{ site.url }}/img/posts/BluePrint Study/level Blueprint Start.png" alt="레벨 블루프린트 화면"
-        style="width: auto; max-width: 100%; max-height: 350px; border-radius: 8px;">
+<figure class="text-center my-4">
+    <img src="{{ site.url }}/img/posts/BluePrint Study/Level Blueprint Start.png" alt="레벨 블루프린트 화면"
+        class="img-fluid rounded" style="max-height: 350px;">
     <figcaption style="margin-top: 10px; font-size: 14px; color: #666;">프로그램을 켜 레벨 블루프린트로 전환하면 보이는 노드들이다.</figcaption>
 </figure>
 
@@ -51,16 +51,16 @@ author: "달여우"
 
 <p>레벨 블루프린트에서 이벤트 함수들을 활용해 게임이 시작될 때마다 로그가 출력되도록 구현해보았습니다.</p>
 
-<div style="display: flex; gap: 20px; justify-content: space-between; flex-wrap: wrap;">
-    <figure style="flex: 1; min-width: 300px; text-align: center; margin: 0;">
+<div class="row">
+    <figure class="col-md-6 text-center">
         <img src="{{ site.url }}/img/posts/BluePrint Study/Now Playing.png" alt="begin play 노드"
-            style="width: auto; max-width: 100%; max-height: 350px; border-radius: 8px;">
+            class="img-fluid rounded" style="max-height: 350px;">
         <figcaption style="margin-top: 10px; font-size: 14px; color: #666;">BeginPlay 이벤트 함수를 이용해 로그를 출력하는 예시
         </figcaption>
     </figure>
-    <figure style="flex: 1; min-width: 300px; text-align: center; margin: 0;">
+    <figure class="col-md-6 text-center">
         <img src="{{ site.url }}/img/posts/BluePrint Study/Now Playing Log.png" alt="begin play 로그"
-            style="width: auto; max-width: 100%; max-height: 350px; border-radius: 8px;">
+            class="img-fluid rounded" style="max-height: 350px;">
         <figcaption style="margin-top: 10px; font-size: 14px; color: #666;">시작하면 노드에 따라서 처음에 BeginPlay 로그가 출력되고 뒤에있는
             boolean값에 따라 true가 출력되는 모습이다.</figcaption>
     </figure>
@@ -70,20 +70,20 @@ author: "달여우"
 
 <p>다음으로 Tick 이벤트 함수를 사용해 매 프레임마다 로그를 출력해보았습니다.</p>
 
-<div style="display: flex; gap: 20px; justify-content: space-between; flex-wrap: wrap;">
-    <figure style="flex: 1; min-width: 300px; text-align: center; margin: 0;">
+<div class="row">
+    <figure class="col-md-4 text-center">
         <img src="{{ site.url }}/img/posts/BluePrint Study/event Tick.png" alt="event Tick 노드"
-            style="width: auto; max-width: 100%; max-height: 350px; border-radius: 8px;">
+            class="img-fluid rounded" style="max-height: 350px;">
         <figcaption style="margin-top: 10px; font-size: 14px; color: #666;">Tick 이벤트 함수를 이용해 로그를 출력하는 예시</figcaption>
     </figure>
-    <figure style="flex: 1; min-width: 300px; text-align: center; margin: 0;">
+    <figure class="col-md-4 text-center">
         <img src="{{ site.url }}/img/posts/BluePrint Study/event Tick Count Log.png" alt="event Tick 카운트 로그"
-            style="width: auto; max-width: 100%; max-height: 350px; border-radius: 8px;">
+            class="img-fluid rounded" style="max-height: 350px;">
         <figcaption style="margin-top: 10px; font-size: 14px; color: #666;">매 프레임마다 노드에 따라 카운트가 증가하는 모습이다.</figcaption>
     </figure>
-    <figure style="flex: 1; min-width: 300px; text-align: center; margin: 0;">
+    <figure class="col-md-4 text-center">
         <img src="{{ site.url }}/img/posts/BluePrint Study/event Tick Count Log Over 777.png" alt="event Tick 카운트 로그 초과"
-            style="width: auto; max-width: 100%; max-height: 350px; border-radius: 8px;">
+            class="img-fluid rounded" style="max-height: 350px;">
         <figcaption style="margin-top: 10px; font-size: 14px; color: #666;">추가로 카운트가 777을 넘어가게 되어 로그의 색도 변경해서 출력하는 모습이다.
         </figcaption>
     </figure>
@@ -102,9 +102,9 @@ author: "달여우"
 </div>
 
 <p>branch 노드는 바로 위 Tick 함수 예시에서 사용되었고 Sequence 또한 마찬가지로 Tick 함수에서도 사용되었습니다.</p>
-<figure style="text-align: center; margin: 20px 0;">
-    <img src="{{ site.url }}/img/posts/BluePrint Study/event Tick sequence.png" alt="Sequence 노드 사용 예시"
-        style="width: auto; max-width: 100%; max-height: 350px; border-radius: 8px;">
+<figure class="text-center my-4">
+    <img src="{{ site.url }}/img/posts/BluePrint Study/event Tick Sequence.png" alt="Sequence 노드 사용 예시"
+        class="img-fluid rounded" style="max-height: 350px;">
     <figcaption style="margin-top: 10px; font-size: 14px; color: #666;">Sequence 노드를 사용한 예시</figcaption>
 </figure>
 
@@ -116,20 +116,20 @@ author: "달여우"
 
 <p>Tick 함수 사용 예시를 활용해서 반복문을 사용해보았습니다.</p>
 
-<div style="display: flex; gap: 20px; justify-content: space-between; flex-wrap: wrap;">
-    <figure style="flex: 1; min-width: 300px; text-align: center; margin: 0;">
-        <img src="{{ site.url }}/img/posts/BluePrint Study/Loop_for Loop.png" alt="for Loop 노드"
-            style="width: auto; max-width: 100%; max-height: 350px; border-radius: 8px;">
+<div class="row">
+    <figure class="col-md-4 text-center">
+        <img src="{{ site.url }}/img/posts/BluePrint Study/Loop-for Loop.png" alt="for Loop 노드"
+            class="img-fluid rounded" style="max-height: 350px;">
         <figcaption style="margin-top: 10px; font-size: 14px; color: #666;">for Loop 노드를 사용한 예시</figcaption>
     </figure>
-    <figure style="flex: 1; min-width: 300px; text-align: center; margin: 0;">
-        <img src="{{ site.url }}/img/posts/BluePrint Study/Loop_While Loop.png" alt="while Loop 노드"
-            style="width: auto; max-width: 100%; max-height: 350px; border-radius: 8px;">
+    <figure class="col-md-4 text-center">
+        <img src="{{ site.url }}/img/posts/BluePrint Study/Loop-While Loop.png" alt="while Loop 노드"
+            class="img-fluid rounded" style="max-height: 350px;">
         <figcaption style="margin-top: 10px; font-size: 14px; color: #666;">while Loop 노드를 사용한 예시</figcaption>
     </figure>
-    <figure style="flex: 1; min-width: 300px; text-align: center; margin: 0;">
+    <figure class="col-md-4 text-center">
         <img src="{{ site.url }}/img/posts/BluePrint Study/For Looop.png" alt="Loop 노드 로그"
-            style="width: auto; max-width: 100%; max-height: 350px; border-radius: 8px;">
+            class="img-fluid rounded" style="max-height: 350px;">
         <figcaption style="margin-top: 10px; font-size: 14px; color: #666;">예시들을 출력한 로그</figcaption>
     </figure>
 </div>
@@ -212,16 +212,16 @@ author: "달여우"
 <p>과열 상태에 따른 패널티는 아직 구현하지 않았지만 100이되어 OverHeat상태가 되면 총기를 사용할 수 없게 됩니다.</p>
 <p>과열 상태는 임시로 특정 키를 누르면 1씩 감소하는 식으로 구현해두었습니다.</p>
 
-<div style="display: flex; gap: 20px; justify-content: space-between; flex-wrap: wrap;">
-    <figure style="flex: 1; min-width: 300px; text-align: center; margin: 0;">
+<div class="row">
+    <figure class="col-md-6 text-center">
         <img src="{{ site.url }}/img/posts/BluePrint Study/press Fire Trigger.png" alt="총기 발사 노드"
-            style="width: auto; max-width: 100%; max-height: 350px; border-radius: 8px;">
+            class="img-fluid rounded" style="max-height: 350px;">
         <figcaption style="margin-top: 10px; font-size: 14px; color: #666;">총기 발사 노드, 테스트중에 찍은 사진으로 총알이 다 떨어지면 자동으로 연사가
             멈추는 노드가 풀려있다.</figcaption>
     </figure>
-    <figure style="flex: 1; min-width: 300px; text-align: center; margin: 0;">
+    <figure class="col-md-6 text-center">
         <img src="{{ site.url }}/img/posts/BluePrint Study/new Function.png" alt="과열 기능을 함수로 구현한 모습"
-            style="width: auto; max-width: 100%; max-height: 350px; border-radius: 8px;">
+            class="img-fluid rounded" style="max-height: 350px;">
         <figcaption style="margin-top: 10px; font-size: 14px; color: #666;">과열 기능을 함수로 구현한 모습, 테스트 도중 찍은 사진이라 제대로 된 상태가
             아님</figcaption>
     </figure>
@@ -237,20 +237,20 @@ author: "달여우"
 
 <p>옆에 우측의 사진은 과열 상태를 증가시키는 함수입니다. 간단하게 0~30까지는 Normal상태, 31~70까지는 High상태, 71~100까지는 Over상태로 변환시켜주는 함수입니다.</p>
 
-<div style="display: flex; gap: 20px; justify-content: space-between; flex-wrap: wrap;">
-    <figure style="flex: 1; min-width: 300px; text-align: center; margin: 0;">
+<div class="row">
+    <figure class="col-md-4 text-center">
         <img src="{{ site.url }}/img/posts/BluePrint Study/fire Log.png" alt="격발 로그"
-            style="width: auto; max-width: 100%; max-height: 350px; border-radius: 8px;">
+            class="img-fluid rounded" style="max-height: 350px;">
         <figcaption style="margin-top: 10px; font-size: 14px; color: #666;">총기가 정상적으로 격발되는 모습</figcaption>
     </figure>
-    <figure style="flex: 1; min-width: 300px; text-align: center; margin: 0;">
+    <figure class="col-md-4 text-center">
         <img src="{{ site.url }}/img/posts/BluePrint Study/overheated.png" alt="과열 로그"
-            style="width: auto; max-width: 100%; max-height: 350px; border-radius: 8px;">
+            class="img-fluid rounded" style="max-height: 350px;">
         <figcaption style="margin-top: 10px; font-size: 14px; color: #666;">과열 상태가 되었을 때의 로그</figcaption>
     </figure>
-    <figure style="flex: 1; min-width: 300px; text-align: center; margin: 0;">
+    <figure class="col-md-4 text-center">
         <img src="{{ site.url }}/img/posts/BluePrint Study/Reload Log.png" alt="재장전 로그"
-            style="width: auto; max-width: 100%; max-height: 350px; border-radius: 8px;">
+            class="img-fluid rounded" style="max-height: 350px;">
         <figcaption style="margin-top: 10px; font-size: 14px; color: #666;">총기 재장전 로그</figcaption>
     </figure>
 </div>
