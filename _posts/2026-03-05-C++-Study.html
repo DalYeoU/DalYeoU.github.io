@@ -53,8 +53,7 @@ TODO: asds
 
 <h3>간단한 예제</h3>
 
-<pre><code>
-    {% highlight c++ %}
+{% highlight c++ %}
 #include <iostream>
 using namespace std;
 
@@ -70,7 +69,6 @@ int main() {
     return 0;
 }
 {% endhighlight %}
-</code></pre>
 
 <div class="row">
     <div class="col-lg-6">
@@ -136,7 +134,7 @@ int main() {
 
 <h3>간단한 예제</h3>
 
-<pre><code>
+{% highlight c++ %}
 #include <iostream>
 using namespace std;
 
@@ -158,7 +156,7 @@ int main() {
 
     delete[] arr; // 반드시 해제
 }
-</code></pre>
+{% endhighlight %}
 
 <p>동적할당 또한 <code>delete</code>를 사용하여 메모리를 해제해야 합니다. 그렇지 않으면 메모리 누수가 발생할 수 있습니다.</p>
 
@@ -167,7 +165,7 @@ int main() {
 <p>구조체는 여러개의 변수를 하나로 묶어 관리하는 데이터 구조입니다.</p>
 <p>만약 학번, 이름, 성적을 관리하는 배열을 만드려면 직접 변수를 선언해서 만드는 것 보다 구조체를 사용해서 관리하는게 훨씬 편리합니다.</p>
 
-<pre><code>
+{% highlight c++ %}
 #include <iostream>
 using namespace std;
 
@@ -189,4 +187,4 @@ int main() {
 
     return 0;
 }
-</code></pre>
+{% endhighlight %}
