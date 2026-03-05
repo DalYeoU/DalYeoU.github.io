@@ -25,6 +25,8 @@ TODO: asds
   position: sticky;
   top: 80px;
   align-self: flex-start;
+  max-height: calc(100vh - 100px);
+  overflow-y: auto;
   background: transparent;
   padding: 15px;
   border-radius: 12px;
