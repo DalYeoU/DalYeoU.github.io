@@ -8,11 +8,6 @@
 TODO: asds
 */
 
-html,
-body {
-  overflow-x: hidden;
-}
-
 .container-fluid {
   overflow: visible !important;
 }
