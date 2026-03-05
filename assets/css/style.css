@@ -6,7 +6,6 @@ body {
 .container-fluid {
   overflow: visible !important;
 }
-
 .content-wrapper {
   display: flex;
   gap: 20px;
@@ -16,8 +15,7 @@ body {
 }
 
 .sidebar {
-  flex: 0 0 220px;
-  /* * 가로 고정, 세로 자동 */
+  flex: 0 0 220px;      /* * 가로 고정, 세로 자동 */
   width: 220px;
   position: sticky;
   top: 80px;
@@ -28,16 +26,14 @@ body {
   margin-left: 0;
   margin-right: auto;
   box-shadow: 0 0 12px rgba(0, 0, 0, 0.12),
-    0 4px 8px rgba(0, 0, 0, 0.08);
+            0 4px 8px rgba(0, 0, 0, 0.08);
 }
-
 .sidebar ul {
   background: transparent;
   margin: 0;
   padding: 0;
   list-style: none;
 }
-
 .sidebar li {
   background: transparent;
   border: none;
@@ -46,11 +42,9 @@ body {
   padding: 4px 0;
   border-bottom: 1px solid #eee;
 }
-
 .sidebar li:last-child {
   border-bottom: none;
 }
-
 .sidebar-badge {
   float: right;
   background: #0085A1;
@@ -65,26 +59,21 @@ body {
   list-style: none;
   padding: 0;
   margin: 0 auto;
-  max-width: 750px;
-  /* * 가로 최대 너비 제한 */
+  max-width: 750px;     /* * 가로 최대 너비 제한 */
 }
-
 .category-posts li {
   padding: 16px 0;
   border-bottom: 1px solid #eee;
 }
-
 .category-posts li:last-child {
   border-bottom: none;
 }
-
 .category-posts a {
   font-size: 1.1rem;
   font-weight: 600;
   color: #333;
   text-decoration: none;
 }
-
 .category-posts a:hover {
   color: #0085A1;
 }
@@ -96,73 +85,22 @@ body {
 }
 
 .main-content {
-  flex: 1;
-  /* * 남은 공간 전부 차지 */
-  min-width: 0;
-  /* * 긴 텍스트 넘침 방지 */
+  flex: 1;          /* * 남은 공간 전부 차지 */
+  min-width: 0;     /* * 긴 텍스트 넘침 방지 */
 }
 
 .table {
-  width: auto;
-  /* * 표 너비 내용에 맞게 */
-  margin: 20px 0;
-  /* * 중앙 정렬 */
+  width: auto;      /* * 표 너비 내용에 맞게 */
+  margin: 20px 0;   /* * 중앙 정렬 */
   font-size: 0.9rem;
 }
-
 .table th {
   background-color: #f8f8f8;
   font-weight: 600;
   text-align: center;
   vertical-align: middle;
 }
-
 .table td {
   text-align: center;
   vertical-align: middle;
-}
-
-/* 1. 코드 블록 전체 (검정 바탕의 큰 박스) */
-pre {
-  background-color: #212529 !important;
-  /* 다크 모드 배경 */
-  padding: 1.5rem !important;
-  border-radius: 12px !important;
-  /* 모서리를 더 둥글게 */
-  overflow-x: auto;
-  /* 가로 스크롤 허용 */
-  margin-bottom: 1rem;
-}
-
-/* 2. 코드 블록 내부의 글자 (배경색 중첩 제거) */
-pre code {
-  background-color: transparent !important;
-  /* 회색 배경 제거 */
-  color: #f8f9fa !important;
-  /* 글자색을 밝게 */
-  padding: 0 !important;
-  border-radius: 0 !important;
-  /* 중첩 둥글기 제거 */
-}
-
-/* 3. 문장 중간에 쓰는 인라인 코드 (기존 스타일 유지) */
-:not(pre)>code {
-  background-color: #a1a1a1;
-  /* 달여우님이 정하신 연한 회색 */
-  color: #d63384;
-  /* 핑크색 글씨 */
-  padding: 0.2rem 0.4rem;
-  border-radius: 6px;
-  /* 살짝 둥글게 */
-}
-
-/* 4. 공통 폰트 설정 */
-code,
-pre {
-  font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !important;
-}
-
-/* 윗첨자(sup) 태그 글씨 색상 변경 */
-sup {
-  color: #666;
 }
