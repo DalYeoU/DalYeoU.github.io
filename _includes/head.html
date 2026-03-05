@@ -50,43 +50,71 @@
       font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !important;
     }
 
-    /* 2. 큰 코드 블록 (pre) - 모서리 둥근 다크 박스 */
-    pre {
-      background-color: #212529 !important;
-      /* 어두운 배경 */
-      color: #f8f9fa !important;
-      /* 밝은 글씨 */
+    /* 2. 코드 블록 (highlight) - 밝은 회색 배경 */
+    div.highlight {
+      background-color: #f6f8fa !important;
+      /* 밝은 회색 배경 (GitHub 스타일) */
       padding: 1.5rem !important;
-      /* 안쪽 여백 */
-      border-radius: 15px !important;
-      /* 모서리를 더 부드럽게 둥글게 */
-      border: 1px solid #343a40 !important;
-      line-height: 1.6 !important;
+      border-radius: 10px !important;
+      /* 모서리 둥글게 */
+      margin: 1.5rem 0 !important;
       overflow-x: auto !important;
       /* 코드가 길면 가로 스크롤 */
-      margin: 1.5rem 0 !important;
     }
 
-    /* 3. 코드 블록 내부의 code 태그 스타일 초기화 */
-    pre code {
+    /* 3. 코드 블록 내부의 pre, code 태그 스타일 초기화 */
+    div.highlight pre,
+    div.highlight code {
       background-color: transparent !important;
-      /* 배경 중첩 제거 */
-      color: inherit !important;
-      /* 흰색 글씨 상속 */
       padding: 0 !important;
-      border-radius: 0 !important;
+      border: none !important;
+      margin: 0 !important;
+      line-height: 1.6 !important;
+      font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !important;
     }
 
-    /* 4. 문장 속 인라인 코드 (code) - 기존 회색 스타일 유지 */
+    /* 4. 문장 속 인라인 코드 (code) */
     :not(pre)>code {
-      background-color: #a1a1a1 !important;
-      /* 달여우님의 기존 회색 */
-      color: #d63384 !important;
-      /* 기존 핑크색 */
+      background-color: #eff0f1 !important;
+      /* 살짝 밝은 회색 */
+      color: #333 !important;
+      /* 어두운 글씨 */
       padding: 0.2rem 0.4rem !important;
       border-radius: 6px !important;
-      /* 살짝 둥글게 */
+      font-size: 0.9em;
     }
+
+    /* 5. Syntax Highlighting 스타일 (Light Theme) */
+    .highlight .c { color: #6a737d; } /* Comment */
+    .highlight .k { color: #d73a49; } /* Keyword */
+    .highlight .o { color: #d73a49; } /* Operator */
+    .highlight .cm { color: #6a737d; } /* Comment.Multiline */
+    .highlight .cp { color: #6a737d; } /* Comment.Preproc */
+    .highlight .c1 { color: #6a737d; } /* Comment.Single */
+    .highlight .cs { color: #6a737d; font-weight: bold; } /* Comment.Special */
+    .highlight .gd { color: #f00; background-color: #fff0f0 } /* Generic.Deleted */
+    .highlight .ge { font-style: italic } /* Generic.Emph */
+    .highlight .gr { color: #f00 } /* Generic.Error */
+    .highlight .gh { color: #000080; font-weight: bold } /* Generic.Heading */
+    .highlight .gi { color: #008000; background-color: #f0fff0 } /* Generic.Inserted */
+    .highlight .go { color: #888 } /* Generic.Output */
+    .highlight .gp { color: #000080; font-weight: bold } /* Generic.Prompt */
+    .highlight .gs { font-weight: bold } /* Generic.Strong */
+    .highlight .gu { color: #800080; font-weight: bold } /* Generic.Subheading */
+    .highlight .gt { color: #a00 } /* Generic.Traceback */
+    .highlight .kc { color: #005cc5; } /* Keyword.Constant */
+    .highlight .kd { color: #d73a49; } /* Keyword.Declaration */
+    .highlight .kn { color: #d73a49; } /* Keyword.Namespace */
+    .highlight .kp { color: #d73a49; } /* Keyword.Pseudo */
+    .highlight .kr { color: #d73a49; } /* Keyword.Reserved */
+    .highlight .kt { color: #d73a49; } /* Keyword.Type */
+    .highlight .m { color: #005cc5; } /* Literal.Number */
+    .highlight .s { color: #032f62; } /* Literal.String */
+    .highlight .nb { color: #005cc5; } /* Name.Builtin */
+    .highlight .nc { color: #e36209; } /* Name.Class */
+    .highlight .nf { color: #6f42c1; } /* Name.Function */
+    .highlight .nt { color: #22863a; } /* Name.Tag */
+    .highlight .nv { color: #e36209; } /* Name.Variable */
   </style>
 
   <link rel="canonical" href="{{ page.url | replace:'index.html','' | absolute_url }}">
