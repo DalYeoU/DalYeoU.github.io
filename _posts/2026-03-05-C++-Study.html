@@ -1,0 +1,183 @@
+---
+layout: post
+title: "내일배움캠프 Unreal Engine 부트캠프 8일차 TIL"
+subtitle: "C++ 학습"
+date: 2026-03-05 23:14:00
+categories: [TIL]
+tags: [TIL, C++]
+background: '/img/bg-post.jpg'
+author: "달여우"
+---
+<!--
+* 1. 오늘 학습 키워드
+* 2. 오늘 학습 한 내용을 나만의 언어로 정리하기
+* 3. 학습하며 겪었던 문제점 & 에러
+*  - 문제&에러에 대한 정의
+*  - 내가 한 시도
+*  - 해결 방법
+*  - 새롭게 알게 된 점
+*  - 이 문제&에러를 다시 만나게 되었다면? 
+* 4. 내일 학습 할 것은 무엇인지
+-->
+
+<div class="alert alert-info" role="alert">오늘 학습한 내용 정리</div>
+<hr>
+<div style="margin-bottom: 20px;">
+    <img src="https://img.shields.io/badge/c++-%2300599C.svg?style=flat-the-badge&logo=c%2B%2B&logoColor=white"
+        alt="C++">
+    <img src="https://img.shields.io/badge/TIL-Day%208-blue?style=flat" alt="TIL Day 8">
+</div>
+
+<h4>C++에 대해 학습한 내용 정리</h4>
+<p>오늘 C++에 대해 학습한 것들은 <strong>포인터, 동적할당, 구조체</strong> 이렇게 3가지입니다.</p>
+
+<h3>1. 포인터(Pointer)</h3>
+<p>포인터는 변수의 주소를 저장하는 변수입니다. 일반 변수는 데이터를 저장하지만 포인터는 변수의 메모리 주소를 저장합니다.</p>
+
+<div>
+    <p style="color:#00d4ff; margin-bottom:6px;">포인터 핵심 개념</p>
+    <ul>
+        <li>일반 변수 : 데이터를 직접 저장 (<code>int a = 10;</code>)</li>
+        <li>포인터 변수 : 데이터가 저장된 메모리 주소를 저장 (<code>int* p = &a;</code>)</li>
+        <li>주소 연산자<code>&a</code> : 변수의 메모리 주소를 반환</li>
+        <li>역참조 연산자<code>*p</code> : 포인터가 가리키는 변수의 값을 반환</li>
+    </ul>
+</div>
+
+<h3>간단한 예제</h3>
+
+<pre><code>
+#include <iostream>
+using namespace std;
+
+int main() {
+    int num = 10;       // 일반 변수
+    int* p = &num;      // 포인터 변수: num의 주소 저장
+
+    cout << "num의 값: " << num << endl;        // 10
+    cout << "num의 주소: " << &num << endl;     // 메모리 주소
+    cout << "포인터 p의 값(주소): " << p << endl; // num의 주소
+    cout << "포인터 p가 가리키는 값: " << *p << endl; // 10
+
+    return 0;
+}
+</code></pre>
+
+<div class="row">
+    <div class="col-lg-6">
+        <h4>포인터와 일반 변수의 차이</h4>
+        <table class="table table-bordered table-striped table-hover text-center">
+            <thead>
+                <tr>
+                    <th>구분</th>
+                    <th>일반 변수(<code>int a = 10;</code>)</th>
+                    <th>포인터(<code>int* p = &a;</code>)</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr>
+                    <td>저장하는 것</td>
+                    <td>값(데이터)</td>
+                    <td>주소(메모리 주소)</td>
+                </tr>
+                <tr>
+                    <td>접근 방법</td>
+                    <td>변수 이름(<code>a</code>)</td>
+                    <td><code>*p</code>로 값 접근</td>
+                </tr>
+                <tr>
+                    <td>활용 예시</td>
+                    <td>단순 값 저장</td>
+                    <td>동적 메모리 관리, 배열,함수 전달</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<p>포인터는 잘 사용하면 효율적으로 데이터를 관리할 수 있는 변수 입니다.</p>
+<p>포인터를 사용할때 주의할 점은 <code>delete</code>를 사용하여 해제하지 않으면 메모리 누수가 발생할 수 있습니다.</p>
+
+<h3>2. 동적할당(Dynamic Memory Allocation)</h3>
+
+<p>우선 메모리의 구조는 크게 1. 스택 메모리, 2. 힙 메모리로 나뉩니다.</p>
+
+<div>
+    <p style="color:#00d4ff; margin-bottom:6px;">스택 메모리</p>
+    <ul>
+        <li>할당 시점 : 컴파일 시점에 크기와 위치가 결정됨</li>
+        <li>저장 대상 : 함수 내에서 선언된 지역 변수</li>
+        <li>관리 방식 : 함수가 끝나면 자동으로 해제</li>
+        <li>속도 : 빠름(메모리 접근이 단순)</li>
+        <li>제한 : 크기 변경 불가, 공간이 제한적 → 큰 배열이나 동적 구조에는 부적합</li>
+    </ul>
+</div>
+
+<div>
+    <p style="color:#00d4ff; margin-bottom:6px;">힙 메모리</p>
+    <ul>
+        <li>동적 할당 : 실행중에 프로그래머가 요청해서 할당</li>
+        <li>저장 대상 : 동적 할당된 객체, 배열, 자료구조</li>
+        <li>관리 방식 : new / delete로 직접 관리</li>
+        <li>속도 : 스택보다 느림 (메모리 요청/해제가 복잡)</li>
+        <li>장점 : 크기를 실행 중에 결정 가능, 유연성 높음</li>
+    </ul>
+</div>
+
+<h3>간단한 예제</h3>
+
+<pre><code>
+#include <iostream>
+using namespace std;
+
+int main() {
+    int size;
+    cout << "배열 크기 입력: ";
+    cin >> size;
+
+    // 힙 메모리에 동적 할당
+    int* arr = new int[size];
+
+    for (int i = 0; i < size; i++) {
+        arr[i] = i + 1;
+    }
+
+    for (int i = 0; i < size; i++) {
+        cout << arr[i] << " ";
+    }
+
+    delete[] arr; // 반드시 해제
+}
+</code></pre>
+
+<p>동적할당 또한 <code>delete</code>를 사용하여 메모리를 해제해야 합니다. 그렇지 않으면 메모리 누수가 발생할 수 있습니다.</p>
+
+<h3>3. 구조체(Structure)</h3>
+
+<p>구조체는 여러개의 변수를 하나로 묶어 관리하는 데이터 구조입니다.</p>
+<p>만약 학번, 이름, 성적을 관리하는 배열을 만드려면 직접 변수를 선언해서 만드는 것 보다 구조체를 사용해서 관리하는게 훨씬 편리합니다.</p>
+
+<pre><code>
+#include <iostream>
+using namespace std;
+
+// 구조체 정의
+struct Student {
+    int id;         // 학번
+    char name[20];  // 이름
+    double grade;   // 성적
+};
+
+int main() {
+    // 구조체 변수 선언 및 초기화
+    Student s1 = {2023001, "Kim", 4.3};
+
+    // 멤버 접근
+    cout << "학번: " << s1.id << endl;
+    cout << "이름: " << s1.name << endl;
+    cout << "성적: " << s1.grade << endl;
+
+    return 0;
+}
+</code></pre>
