@@ -8,22 +8,90 @@
     {% else %}{{ site.title | escape }}{% endif %}
   </title>
 
-  <meta name="description" content="{{ page.excerpt | default: site.description | strip_html | normalize_whitespace | truncate: 160 | escape }}">
+  <meta name="description"
+    content="{{ page.excerpt | default: site.description | strip_html | normalize_whitespace | truncate: 160 | escape }}">
 
-  <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
-  <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet'
+    type='text/css'>
+  <link
+    href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800'
+    rel='stylesheet' type='text/css'>
 
   <script src="https://use.fontawesome.com/releases/v5.15.3/js/all.js" crossorigin="anonymous"></script>
 
-  <link rel="stylesheet" href="{{"/assets/main.css" | relative_url }}">
-  <link rel="stylesheet" href="{{ "/assets/css/style.css" | relative_url }}">
-    <!-- Google Fonts: Noto Sans KR -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700&display=swap" rel="stylesheet">
-  
+  <link rel="stylesheet" href="{{" /assets/main.css" | relative_url }}">
+  <link rel="stylesheet" href="{{ " /assets/css/style.css" | relative_url }}">
+  <!-- Google Fonts: Noto Sans KR -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* 전체 폰트 강제 적용 */
+    body,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    .navbar-brand,
+    .nav-link,
+    .post-title,
+    .post-subtitle,
+    .btn,
+    table {
+      font-family: 'Noto Sans KR', sans-serif !important;
+    }
+
+    /* 1. 공통 폰트 설정 */
+    code,
+    pre {
+      font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !important;
+    }
+
+    /* 2. 큰 코드 블록 (pre) - 모서리 둥근 다크 박스 */
+    pre {
+      background-color: #212529 !important;
+      /* 어두운 배경 */
+      color: #f8f9fa !important;
+      /* 밝은 글씨 */
+      padding: 1.5rem !important;
+      /* 안쪽 여백 */
+      border-radius: 15px !important;
+      /* 모서리를 더 부드럽게 둥글게 */
+      border: 1px solid #343a40 !important;
+      line-height: 1.6 !important;
+      overflow-x: auto !important;
+      /* 코드가 길면 가로 스크롤 */
+      margin: 1.5rem 0 !important;
+    }
+
+    /* 3. 코드 블록 내부의 code 태그 스타일 초기화 */
+    pre code {
+      background-color: transparent !important;
+      /* 배경 중첩 제거 */
+      color: inherit !important;
+      /* 흰색 글씨 상속 */
+      padding: 0 !important;
+      border-radius: 0 !important;
+    }
+
+    /* 4. 문장 속 인라인 코드 (code) - 기존 회색 스타일 유지 */
+    :not(pre)>code {
+      background-color: #a1a1a1 !important;
+      /* 달여우님의 기존 회색 */
+      color: #d63384 !important;
+      /* 기존 핑크색 */
+      padding: 0.2rem 0.4rem !important;
+      border-radius: 6px !important;
+      /* 살짝 둥글게 */
+    }
+  </style>
+
   <link rel="canonical" href="{{ page.url | replace:'index.html','' | absolute_url }}">
-  <link rel="alternate" type="application/rss+xml" title="{{ site.title | escape }}" href="{{ "/feed.xml" | relative_url }}">
-  <link rel="icon" type="image/png" href="{{ "/img/favicon.png" | relative_url }}">
+  <link rel="alternate" type="application/rss+xml" title="{{ site.title | escape }}" href="{{ " /feed.xml" |
+    relative_url }}">
+  <link rel="icon" type="image/png" href="{{ " /img/favicon.png" | relative_url }}">
 
 </head>
