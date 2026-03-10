@@ -1,0 +1,152 @@
+---
+layout: post
+title: "내일배움캠프 Unreal Engine 부트캠프 10일차 TIL"
+subtitle: "C++ 학습"
+date: 2026-03-05 23:14:00
+categories: [TIL, C++]
+tags: [TIL, C++]
+background: '/img/bg-post.jpg'
+author: "달여우"
+---
+<!--
+? dasd
+! asds
+& asds
+^ asds
+* asds
+~ asds
+TODO: asds
+* 1. 오늘 학습 키워드
+* 2. 오늘 학습 한 내용을 나만의 언어로 정리하기
+* 3. 학습하며 겪었던 문제점 & 에러
+*  - 문제&에러에 대한 정의
+*  - 내가 한 시도
+*  - 해결 방법
+*  - 새롭게 알게 된 점
+*  - 이 문제&에러를 다시 만나게 되었다면? 
+* 4. 내일 학습 할 것은 무엇인지
+
+~코드블럭 사용법
+~언어명(CODENAME)을 지정하면 문법 강조가 적용됩니다.
+~{% highlight CODENAME %}
+~{% endhighlight %}
+-->
+
+<div class="alert alert-info" role="alert">오늘 학습한 내용 정리</div>
+<hr>
+<div style="margin-bottom: 20px;">
+    <img src="https://img.shields.io/badge/c++-%2300599C.svg?style=flat-the-badge&logo=c%2B%2B&logoColor=white"
+        alt="C++">
+    <img src="https://img.shields.io/badge/TIL-Day%2010-blue?style=flat" alt="TIL Day 10">
+</div>
+
+<h4>C++에 대해 학습한 내용 정리</h4>
+<p>오늘은 포인터에 대해서, 그리고 레퍼런스에 대해서 학습했습니다.</p>
+
+<h3>1. 레퍼런스</h3>
+
+<p>레퍼런스는 포인터와 비슷하지만 약간 다르다. 간단하게 말하자면 레퍼런스는 변수에 별명을 부여하는 기능을 합니다.</p>
+<p>레퍼런스는 선언과 동시에 초기화가 되어야 하며, 한번 초기화된 레퍼런스는 다른 변수에 참조할 수 없습니다. 또한 레퍼런스는 포인터와 달리 null이 될 수 없습니다.</p>
+
+<h3>간단한 예제</h3>
+
+{% highlight cpp %}
+#include <iostream>
+using namespace std;
+
+void addTenRef(int& r) {
+    r = r + 10;
+    cout << "레퍼런스 사용:" << r << endl;
+}
+
+int main() {
+    int num = 5;
+    
+    addTenRef(num);
+}
+{% endhighlight %}
+
+<p style="margin-top: -15px; font-size: 0.9em; color: #888;">실행 결과:</p>
+{% highlight text %}
+num의 값: 15
+{% endhighlight %}
+
+<p>위 예제를 보면 레퍼런스는 단순하게 기존의 변수처럼 사용이 가능합니다. 호출하기도 편하고 해당 변수에 직접 접근할 수 있습니다.</p>
+
+<h3>2. 포인터</h3>
+<p>포인터는 저번 TIL에서도 있는 내용입니다. 간단하게 말해서 레퍼런스는 해당 변수에 별명을 부여하는 기능이지만 포인터는 변수의 주소를 저장하는 기능을 합니다.</p>
+
+<h3>간단한 예제</h3>
+
+{% highlight cpp %}
+#include <iostream>
+using namespace std;
+
+void addTenPointer(int* p) {
+    *p = *p + 10;
+    cout << "포인터 사용:" << *p << endl;
+}
+
+int main() {
+    int num = 5;
+
+    addTenPointer(&num);
+}
+{% endhighlight %}
+<p style="margin-top: -15px; font-size: 0.9em; color: #888;">실행 결과:</p>
+{% highlight text %}
+num의 값: 15
+{% endhighlight %}
+
+<p>위 예제를 보면 포인터는 해당 변수의 주소를 저장하기 때문에 호출할 때 주소값을 전달해야 합니다. 그리고 포인터가 가리키는 값을 변경하려면 <code>*p</code>와 같이 역참조 연산자를 사용해야 합니다.</p>
+
+<h3>3. 포인터와 레퍼런스의 차이점</h3>
+<p>포인터와 레퍼런스는 모두 변수에 대한 간접적인 접근을 제공하지만 차이점이 있습니다.</p>
+
+<div class="row">
+    <div class="col-lg-6">
+        <h4>포인터와 레퍼런스의 차이</h4>
+        <table class="table table-bordered table-striped table-hover text-center">
+            <thead>
+                <tr>
+                    <th>구분</th>
+                    <th>포인터(<code>int* p = &a;</code>)</th>
+                    <th>레퍼런스(<code>int& r = a;</code>)</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr>
+                    <td>특징</td>
+                    <td>변수의 주소를 저장</td>
+                    <td>변수에 대한 별명</td>
+                </tr>
+                <tr>
+                    <td>접근 방법</td>
+                    <td><code>*p</code>로 값 접근</td>
+                    <td>변수 이름처럼 접근</td>
+                </tr>
+                <tr>
+                    <td>초기화</td>
+                    <td>나중에 주소 저장 가능(<code>nullptr</code>가능)</td>
+                    <td><strong>선언과 동시에</strong> 초기화 필요</td>
+                </tr>
+                <tr>
+                    <td>재할당</td>
+                    <td>다른 주소로 재할당 가능</td>
+                    <td>한 번 초기화되면 다른 변수 참조 불가</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<p>위 표를 보면 포인터는 사용이 유연하지만, 레퍼런스는 더 간단하고 안전한 방식으로 변수를 참조할 수 있습니다.</p>
+
+<h3>학습하며 든 궁금증</h3>
+
+<p><em>그럼 무조건 레퍼런스가 좋은 거 아냐? 포인터는 왜 써?</em>라는 의문점이 들었다.</p>
+<p>포인터와 레퍼런스의 차이점은 유연성이 있고 안전성이 있습니다.</p>
+
+<p>예를들어, 포인터는 이번엔 A의 주소를 저장했다가 바로 다음엔 B의 주소를 저장하는 방식이 가능하지만, 레퍼런스는 그게 안된다. 한번 별명을 지정하면 변경이 안되기 때문이다.</p>
+<p>하지만 레퍼런스는 포인터보다 사용하기 훨씬 편하기에 원본을 안전하고 깔끔하게 수정할때 사용하기에 좋다.</p>
