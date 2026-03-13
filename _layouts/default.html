@@ -3,6 +3,76 @@
 <html>
 
 {% include head.html %}
+<style>
+  /* 1. 테마별 색상 변수 정의 */
+  :root {
+    --bg-color: #ffffff;
+    --text-color: #212529;
+    --link-color: #007bff;
+    --card-bg: #f8f9fa;
+    --border-color: #dee2e6;
+    --navbar-bg: #ffffff;
+  }
+
+  [data-theme="dark"] {
+    --bg-color: #1a1a1a;
+    --text-color: #e0e0e0;
+    --link-color: #66b3ff;
+    --card-bg: #2d2d2d;
+    --border-color: #444;
+    --navbar-bg: #1a1a1a;
+  }
+
+  /* 2. 전역 스타일 적용 */
+  body {
+    background-color: var(--bg-color) !important;
+    color: var(--text-color) !important;
+    transition: background-color 0.3s, color 0.3s;
+  }
+
+  /* 부트스트랩 요소 및 기타 컴포넌트 대응 */
+  .navbar-custom, footer { background-color: var(--navbar-bg) !important; }
+  .table { color: var(--text-color) !important; border-color: var(--border-color) !important; }
+  .table-striped tbody tr:nth-of-type(odd) { background-color: rgba(255,255,255,0.05); }
+  .post-preview > a { color: var(--text-color) !important; }
+  .post-preview > a > .post-subtitle { color: var(--text-color); opacity: 0.8; }
+
+  /* 3. 플로팅 버튼 스타일 */
+  #theme-toggle {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #333;
+    color: white;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    transition: transform 0.2s, background-color 0.3s;
+    font-size: 20px;
+  }
+
+  #theme-toggle:hover { transform: scale(1.1); }
+  
+  [data-theme="dark"] #theme-toggle {
+    background-color: #f0f0f0;
+    color: #333;
+  }
+</style>
+
+<script>
+  /* 페이지 로드 전 테마 적용 (깜빡임 방지) */
+  (function() {
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    document.documentElement.setAttribute('data-theme', savedTheme);
+  })();
+</script>
 
 <body>
 
@@ -10,12 +80,37 @@
 
   {{ content }}
 
+  <!-- 다크모드 플로팅 버튼 -->
+  <button id="theme-toggle" aria-label="다크 모드 변경">
+    <span id="theme-icon">🌙</span>
+  </button>
+
   {% include footer.html %}
 
   {% include scripts.html %}
 
   {% include google-analytics.html %}
 
-</body>
+  <script>
+    const themeToggle = document.getElementById('theme-toggle');
+    const themeIcon = document.getElementById('theme-icon');
+    const htmlEl = document.documentElement;
 
+    function updateIcon(theme) {
+      themeIcon.textContent = theme === 'dark' ? '☀️' : '🌙';
+    }
+
+    // 초기 아이콘 상태 설정
+    updateIcon(htmlEl.getAttribute('data-theme'));
+
+    themeToggle.addEventListener('click', () => {
+      const currentTheme = htmlEl.getAttribute('data-theme');
+      const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+      
+      htmlEl.setAttribute('data-theme', newTheme);
+      localStorage.setItem('theme', newTheme);
+      updateIcon(newTheme);
+    });
+  </script>
+</body>
 </html>
