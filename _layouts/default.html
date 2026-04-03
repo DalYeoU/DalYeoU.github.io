@@ -8,19 +8,33 @@
   :root {
     --bg-color: #ffffff;
     --text-color: #212529;
-    --link-color: #007bff;
+    --secondary-text: #6c757d;
+    --link-color: #0085A1;
     --card-bg: #f8f9fa;
     --border-color: #dee2e6;
     --navbar-bg: #ffffff;
+    --code-bg: #f6f8fa;
+    --code-text: #24292e;
+    --sidebar-bg: #ffffff;
+    --table-header-bg: #f8f8f8;
+    --badge-bg: #0085A1;
+    --badge-text: #ffffff;
   }
 
   [data-theme="dark"] {
-    --bg-color: #1a1a1a;
+    --bg-color: #1a1b1e;
     --text-color: #e0e0e0;
+    --secondary-text: #a0a0a0;
     --link-color: #66b3ff;
-    --card-bg: #2d2d2d;
-    --border-color: #444;
-    --navbar-bg: #1a1a1a;
+    --card-bg: #2d2d30;
+    --border-color: #3f3f46;
+    --navbar-bg: #1a1b1e;
+    --code-bg: #282c34;
+    --code-text: #abb2bf;
+    --sidebar-bg: #252529;
+    --table-header-bg: #2d2d30;
+    --badge-bg: #3b82f6;
+    --badge-text: #ffffff;
   }
 
   /* 2. 전역 스타일 적용 */
@@ -33,14 +47,47 @@
   /* 부트스트랩 요소 및 기타 컴포넌트 대응 */
   .navbar-custom, footer { background-color: var(--navbar-bg) !important; }
   .table { color: var(--text-color) !important; border-color: var(--border-color) !important; }
-  .table-striped tbody tr:nth-of-type(odd) { background-color: rgba(255,255,255,0.05); }
+  .table th { background-color: var(--table-header-bg) !important; color: var(--text-color) !important; border-color: var(--border-color) !important; }
+  .table td { border-color: var(--border-color) !important; }
+  .table-striped tbody tr:nth-of-type(odd) { background-color: rgba(255,255,255,0.03) !important; }
   
   /* 사이드바 카테고리 및 링크 대응 */
+  .sidebar { 
+    background-color: var(--sidebar-bg) !important; 
+    border: 1px solid var(--border-color);
+  }
   .sidebar a, .sidebar li, .sidebar span { color: var(--text-color) !important; }
+  .sidebar li { border-bottom: 1px solid var(--border-color) !important; }
   .sidebar a:hover { color: var(--link-color) !important; text-decoration: none; }
+  .sidebar-badge { background-color: var(--badge-bg) !important; color: var(--badge-text) !important; }
   
   .post-preview > a { color: var(--text-color) !important; }
-  .post-preview > a > .post-subtitle { color: var(--text-color); opacity: 0.8; }
+  .post-preview > a > .post-subtitle { color: var(--secondary-text); }
+
+  /* 코드 블록 다크모드 대응 (head.html의 !important 강제 오버라이드) */
+  [data-theme="dark"] div.highlight, 
+  [data-theme="dark"] pre {
+    background-color: var(--code-bg) !important;
+    color: var(--code-text) !important;
+    border: 1px solid var(--border-color);
+  }
+
+  [data-theme="dark"] :not(pre)>code {
+    background-color: var(--border-color) !important;
+    color: var(--link-color) !important;
+  }
+
+  /* 다크모드 Syntax Highlighting (One Dark 스타일) */
+  [data-theme="dark"] .highlight .c { color: #5c6370; } /* Comment */
+  [data-theme="dark"] .highlight .k { color: #c678dd; } /* Keyword */
+  [data-theme="dark"] .highlight .o { color: #56b6c2; } /* Operator */
+  [data-theme="dark"] .highlight .s { color: #98c379; } /* String */
+  [data-theme="dark"] .highlight .kt { color: #e06c75; } /* Type */
+  [data-theme="dark"] .highlight .nf { color: #61afef; } /* Function */
+  [data-theme="dark"] .highlight .nc { color: #e5c07b; } /* Class */
+  [data-theme="dark"] .highlight .nb { color: #56b6c2; } /* Builtin */
+  [data-theme="dark"] .highlight .m { color: #d19a66; } /* Number */
+  [data-theme="dark"] .highlight .nv { color: #e06c75; } /* Variable */
 
   /* 3. 플로팅 버튼 스타일 */
   #theme-toggle {
